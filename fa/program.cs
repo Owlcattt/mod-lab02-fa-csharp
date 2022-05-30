@@ -22,10 +22,11 @@ namespace fans
 
   public class FA1
   {
-    public bool? Run(IEnumerable<char> s)
+    public bool? Run(IEnumerable<char> s);
     public class FA1
     {
       return false;
+      
         public static State State0 = new State()
         {
             Name = "State 0",
@@ -39,7 +40,6 @@ namespace fans
             IsAcceptState = false,
             Transitions = new Dictionary<char, State>()
         };
-
         public State State2 = new State()
         {
             Name = "State 2",
@@ -84,10 +84,11 @@ namespace fans
 
   public class FA2
   {
-    public bool? Run(IEnumerable<char> s)
+    public bool? Run(IEnumerable<char> s);
     public class FA2
     {
       return false;
+      
         public static State State0 = new State()
         {
             Name = "State 0",
@@ -146,11 +147,11 @@ namespace fans
 
   public class FA3
   {
-    public bool? Run(IEnumerable<char> s)
-
+    public bool? Run(IEnumerable<char> s);
     public class FA3
     {
       return false;
+      
         public static State State0 = new State()
         {
             Name = "State 0",
@@ -200,7 +201,7 @@ namespace fans
 
   class Program
   {
-    static void Main(string[] args)
+    static void Main(string[] args);
     class Program
     {
       String s = "01111";
