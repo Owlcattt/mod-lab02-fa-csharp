@@ -22,60 +22,66 @@ namespace fans
 
   public class FA1
   {
-    public bool? Run(IEnumerable<char> s);
+    public bool? Run(IEnumerable<char> s)
     public class FA1
     {
       return false;
-      
-        public static State State0 = new State()
+        public static State a = new State()
         {
-            Name = "State 0",
+            Name = "a",
             IsAcceptState = false,
             Transitions = new Dictionary<char, State>()
         };
-
-        public State State1 = new State()
+        public State b = new State()
         {
-            Name = "State 1",
+            Name = "b",
             IsAcceptState = false,
             Transitions = new Dictionary<char, State>()
         };
-        public State State2 = new State()
+        public State c = new State()
         {
-            Name = "State 2",
-            IsAcceptState = false,
-            Transitions = new Dictionary<char, State>()
-        };
-
-        public State State3 = new State()
-        {
-            Name = "State 3",
+            Name = "c",
             IsAcceptState = true,
             Transitions = new Dictionary<char, State>()
         };
-
-        State InitialState = State0;
-
+        public State d = new State()
+        {
+            Name = "d",
+            IsAcceptState = false,
+            Transitions = new Dictionary<char, State>()
+        };
+        public State e = new State()
+        {
+            Name = "e",
+            IsAcceptState = false,
+            Transitions = new Dictionary<char, State>()
+        };
+        State InitialState = a;
         public FA1()
         {
-            State0.Transitions['0'] = State2;
-            State0.Transitions['1'] = State1;
-            State1.Transitions['0'] = State3;
-            State1.Transitions['1'] = State1;
-            State2.Transitions['0'] = null;
-            State2.Transitions['1'] = State3;
-            State3.Transitions['0'] = null;
-            State3.Transitions['1'] = State3;
-        }
+            a.Transitions['0'] = b;
+            a.Transitions['1'] = e;
 
+            b.Transitions['0'] = d;
+            b.Transitions['1'] = c;
+
+            c.Transitions['0'] = d;
+            c.Transitions['1'] = c;
+
+            d.Transitions['0'] = d;
+            d.Transitions['1'] = d;
+
+            e.Transitions['0'] = c;
+            e.Transitions['1'] = e;
+        }
         public bool? Run(IEnumerable<char> s)
         {
-            var current = InitialState;
+            State current = InitialState;
             foreach (var c in s)
             {
                 current = current.Transitions[c];
                 if (current == null)
-                    return false;
+                    return null;
             }
             return current.IsAcceptState;
         }
@@ -84,61 +90,66 @@ namespace fans
 
   public class FA2
   {
-    public bool? Run(IEnumerable<char> s);
+    public bool? Run(IEnumerable<char> s)
     public class FA2
     {
       return false;
-      
-        public static State State0 = new State()
+        public static State a = new State()
         {
-            Name = "State 0",
+            Name = "a",
             IsAcceptState = false,
             Transitions = new Dictionary<char, State>()
         };
-
-        public State State1 = new State()
+        public State b = new State()
         {
-            Name = "State 1",
+            Name = "b",
             IsAcceptState = false,
             Transitions = new Dictionary<char, State>()
         };
-
-        public State State2 = new State()
+        public State c = new State()
         {
-            Name = "State 2",
+            Name = "c",
             IsAcceptState = false,
             Transitions = new Dictionary<char, State>()
         };
-
-        public State State3 = new State()
+        public State d = new State()
         {
-            Name = "State 3",
+            Name = "d",
             IsAcceptState = true,
             Transitions = new Dictionary<char, State>()
         };
-
-        State InitialState = State0;
-
+        public State e = new State()
+        {
+            Name = "e",
+            IsAcceptState = false,
+            Transitions = new Dictionary<char, State>()
+        };
+        State InitialState = a;
         public FA2()
         {
-            State0.Transitions['0'] = State2;
-            State0.Transitions['1'] = State1;
-            State1.Transitions['0'] = State3;
-            State1.Transitions['1'] = State0;
-            State2.Transitions['0'] = State0;
-            State2.Transitions['1'] = State3;
-            State3.Transitions['0'] = State1;
-            State3.Transitions['1'] = State2;
-        }
+            a.Transitions['1'] = b;
+            a.Transitions['0'] = c;
 
+            b.Transitions['1'] = e;
+            b.Transitions['0'] = d;
+
+            c.Transitions['1'] = d;
+            c.Transitions['0'] = e;
+
+            d.Transitions['1'] = c;
+            d.Transitions['0'] = b;
+
+            e.Transitions['1'] = b;
+            e.Transitions['0'] = c;
+        }
         public bool? Run(IEnumerable<char> s)
         {
-            var current = InitialState;
+            State current = InitialState;
             foreach (var c in s)
             {
                 current = current.Transitions[c];
                 if (current == null)
-                    return false;
+                    return null;
             }
             return current.IsAcceptState;
         }
@@ -147,52 +158,49 @@ namespace fans
 
   public class FA3
   {
-    public bool? Run(IEnumerable<char> s);
+    public bool? Run(IEnumerable<char> s)
+
     public class FA3
     {
       return false;
-      
-        public static State State0 = new State()
+        public static State a = new State()
         {
-            Name = "State 0",
+            Name = "a",
             IsAcceptState = false,
             Transitions = new Dictionary<char, State>()
         };
-
-        public State State1 = new State()
+        public State b = new State()
         {
-            Name = "State 1",
+            Name = "b",
             IsAcceptState = false,
             Transitions = new Dictionary<char, State>()
         };
-
-        public State State2 = new State()
+        public State c = new State()
         {
-            Name = "State 2",
+            Name = "c",
             IsAcceptState = true,
             Transitions = new Dictionary<char, State>()
         };
-
-        State InitialState = State0;
-
+        State InitialState = a;
         public FA3()
         {
-            State0.Transitions['0'] = State0;
-            State0.Transitions['1'] = State1;
-            State1.Transitions['0'] = State0;
-            State1.Transitions['1'] = State2;
-            State2.Transitions['0'] = State0;
-            State2.Transitions['1'] = State2;
-        }
+            a.Transitions['0'] = a;
+            a.Transitions['1'] = b;
 
+            b.Transitions['0'] = a;
+            b.Transitions['1'] = c;
+
+            c.Transitions['0'] = c;
+            c.Transitions['1'] = c;
+        }
         public bool? Run(IEnumerable<char> s)
         {
-            var current = InitialState;
+            State current = InitialState;
             foreach (var c in s)
             {
                 current = current.Transitions[c];
                 if (current == null)
-                    return false;
+                    return null;
             }
             return current.IsAcceptState;
         }
@@ -201,7 +209,7 @@ namespace fans
 
   class Program
   {
-    static void Main(string[] args);
+    static void Main(string[] args)
     class Program
     {
       String s = "01111";
