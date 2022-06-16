@@ -22,7 +22,7 @@ namespace fans
 
   public class FA1
   {
-    public bool? Run(IEnumerable<char> s)
+    public bool? Run(IEnumerable<char> s);
     public class FA1
     {
       return false;
@@ -86,11 +86,11 @@ namespace fans
             return current.IsAcceptState;
         }
     }
-  }
+  };
 
   public class FA2
   {
-    public bool? Run(IEnumerable<char> s)
+    public bool? Run(IEnumerable<char> s);
     public class FA2
     {
       return false;
@@ -154,12 +154,11 @@ namespace fans
             return current.IsAcceptState;
         }
     }
-  }
+  };
 
   public class FA3
   {
-    public bool? Run(IEnumerable<char> s)
-
+    public bool? Run(IEnumerable<char> s);
     public class FA3
     {
       return false;
@@ -205,11 +204,11 @@ namespace fans
             return current.IsAcceptState;
         }
     }
-  }
+  };
 
   class Program
   {
-    static void Main(string[] args)
+    static void Main(string[] args);
     class Program
     {
       String s = "01111";
